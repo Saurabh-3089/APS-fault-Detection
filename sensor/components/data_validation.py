@@ -82,12 +82,12 @@ class DataValidation:
                 if same_distribution.pvalue>0.05:
                     #accepting Null Hypothesis
                     drift_report[base_column]={
-                        "pvalue":same_distribution.pvalue,
+                        "pvalue":float(same_distribution.pvalue),
                         "Same_DIstribution":True
                     }
                 else:
                     drift_report[base_column]={
-                        "pvalue":same_distribution.pvalue,
+                        "pvalue":float(same_distribution.pvalue),
                         "Same_DIstribution":False
                     }
 
