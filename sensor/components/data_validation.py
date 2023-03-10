@@ -3,6 +3,7 @@ import numpy as np
 from sensor.entity import artifact_entity,config_entity
 from sensor.logger import logging
 from sensor.exception import SensorException
+from sensor.config import TARGET_COLUMN
 from scipy.stats import ks_2samp
 from typing import Optional
 from sensor import utils
@@ -115,7 +116,7 @@ class DataValidation:
             logging.info(f"Drop null values colums from test df")
             test_df=self.drop_missing_values_columns(df=test_df,report_key_name="mising_values_within_test_dataset")
 
-            exclude_columns=["class"]
+            exclude_columns=[TARGET_COLUMN]
             base_df =utils.convert_columns_float(df=base_df, exclude_columns=exclude_columns)
             train_df =utils.convert_columns_float(df=train_df, exclude_columns=exclude_columns)
             test_df =utils.convert_columns_float(df=train_df, exclude_columns=exclude_columns)
