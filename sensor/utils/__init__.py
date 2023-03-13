@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from sensor.config import mongo_client
 from sensor.exception import SensorException
 from sensor.logger import logging
